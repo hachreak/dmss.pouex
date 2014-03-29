@@ -111,6 +111,10 @@
   <children xmi:type="notation:Node" xmi:id="_OyakALdYEeORb5BRaWIL_g" type="1001">
     <children xmi:type="notation:Node" xmi:id="_OybLELdYEeORb5BRaWIL_g" type="4001"/>
     <children xmi:type="notation:Node" xmi:id="_OybLEbdYEeORb5BRaWIL_g" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_bLZXQLd2EeOLS-bg69ySxw" type="2001">
+        <element xmi:type="ecore:EAttribute" href="PouexMM.ecore#//State/name"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_bLZXQbd2EeOLS-bg69ySxw"/>
+      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_OybLErdYEeORb5BRaWIL_g"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_OybLE7dYEeORb5BRaWIL_g"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_OybLFLdYEeORb5BRaWIL_g"/>
@@ -127,6 +131,10 @@
   <children xmi:type="notation:Node" xmi:id="_XyhSkLdYEeORb5BRaWIL_g" type="1001">
     <children xmi:type="notation:Node" xmi:id="_Xyh5oLdYEeORb5BRaWIL_g" type="4001"/>
     <children xmi:type="notation:Node" xmi:id="_XyigsLdYEeORb5BRaWIL_g" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_cUEPgLd2EeOLS-bg69ySxw" type="2001">
+        <element xmi:type="ecore:EAttribute" href="PouexMM.ecore#//ActivationCondition/name"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_cUEPgbd2EeOLS-bg69ySxw"/>
+      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_XyigsbdYEeORb5BRaWIL_g"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_XyigsrdYEeORb5BRaWIL_g"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_Xyigs7dYEeORb5BRaWIL_g"/>
@@ -143,6 +151,10 @@
   <children xmi:type="notation:Node" xmi:id="_mKgEwLdYEeORb5BRaWIL_g" type="1001">
     <children xmi:type="notation:Node" xmi:id="_mKgr0LdYEeORb5BRaWIL_g" type="4001"/>
     <children xmi:type="notation:Node" xmi:id="_mKhS4LdYEeORb5BRaWIL_g" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_dptMwLd2EeOLS-bg69ySxw" type="2001">
+        <element xmi:type="ecore:EAttribute" href="PouexMM.ecore#//Action/name"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_dptMwbd2EeOLS-bg69ySxw"/>
+      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_mKhS4bdYEeORb5BRaWIL_g"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_mKhS4rdYEeORb5BRaWIL_g"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_mKhS47dYEeORb5BRaWIL_g"/>
@@ -226,6 +238,10 @@
   <children xmi:type="notation:Node" xmi:id="_oc4tYLd0EeOLS-bg69ySxw" type="1001">
     <children xmi:type="notation:Node" xmi:id="_oc6ikLd0EeOLS-bg69ySxw" type="4001"/>
     <children xmi:type="notation:Node" xmi:id="_oc6ikbd0EeOLS-bg69ySxw" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_Zp-AwLd2EeOLS-bg69ySxw" type="2001">
+        <element xmi:type="ecore:EAttribute" href="PouexMM.ecore#//BodyPart/name"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_Zp-Awbd2EeOLS-bg69ySxw"/>
+      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_oc6ikrd0EeOLS-bg69ySxw"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_oc6ik7d0EeOLS-bg69ySxw"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_oc6ilLd0EeOLS-bg69ySxw"/>
