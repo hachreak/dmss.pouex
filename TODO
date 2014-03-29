@@ -1,4 +1,13 @@
-* OCL: 
-  - basic physics features: weight, height, mascot breed, dirt
+* Feature examples:
+  - basic physic features: weight, height, mascot's breed, dirt
   - basic emotional features: happiness, sadness, health
-  - basic actions: play, eat, clean, sleep, medication 
+  - basic actions: play, eat, clean, sleep, medication
+  
+* OCL: 
+  - Each feature have to define: name, initial, minumum, maximum values, type
+  - At least should exist one defined action that can modify each features
+  - One action can't modify level of a feature twice in succession 
+  
+* Changes to do:
+  - how is implemented the events. Need to distinguish "environment event" like TimeEvent to PouexEvent like "Play"
+  - for each PouexEvent should have the possibility to define features of the event (like how many players, ...) 

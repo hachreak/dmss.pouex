@@ -16,12 +16,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="bodyparts" upperBound="-1"
         eType="#//BodyPart" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Feature">
+  <eClassifiers xsi:type="ecore:EClass" name="Feature" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="initial" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="minimum" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="maximum" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//FeatureType"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="threshold" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="event" upperBound="-1"
         eType="#//FeatureEvent" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -53,7 +52,10 @@
     <eLiterals name="POSITIVE"/>
     <eLiterals name="NEGATIVE" value="1"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FeatureEvent" eSuperTypes="#//Action"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FeatureEvent" eSuperTypes="#//Action">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="threshold" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BodyPart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="subparts" upperBound="-1"
         eType="#//BodyPart" containment="true"/>
