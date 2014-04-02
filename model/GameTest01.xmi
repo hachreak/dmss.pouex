@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="ASCII"?>
+<pouexmm:Game
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:pouexmm="http://pouexmm/1.0"
+    xsi:schemaLocation="http://pouexmm/1.0 ../metamodel/PouexMM.ecore">
+  <pouex name="Pippo">
+    <features
+        xsi:type="pouexmm:Physic"
+        default="5.0"
+        minimum="1.0"
+        maximum="100.0"
+        name="weight"/>
+    <features
+        xsi:type="pouexmm:Emotional"
+        default="5.0"
+        minimum="0.0"
+        maximum="10.0"
+        name="happiness"/>
+    <features
+        xsi:type="pouexmm:Physic"
+        default="3.0"
+        minimum="0.0"
+        maximum="10.0"
+        name="Dirty"/>
+    <features
+        xsi:type="pouexmm:Emotional"
+        default="5.0"
+        minimum="0.0"
+        maximum="10.0"
+        name="Hungry"/>
+    <features
+        xsi:type="pouexmm:Physic"
+        default="3.0"
+        minimum="0.0"
+        maximum="10.0"
+        name="Tiredness"/>
+    <features
+        xsi:type="pouexmm:Physic"
+        default="0.0"
+        minimum="0.0"
+        maximum="100.0"
+        name="Age"/>
+    <states
+        name="Hungry">
+      <activationConditions
+          xsi:type="pouexmm:MinThreasholdActivationCondition"
+          features="//@pouex/@features.3"
+          name="when is hungry"
+          threshold="8.0"/>
+    </states>
+    <states
+        name="Dead">
+      <activationConditions
+          xsi:type="pouexmm:MinThreasholdActivationCondition"
+          features="//@pouex/@features.1"
+          name="if not happy"
+          threshold="0.0"/>
+      <activationConditions
+          xsi:type="pouexmm:MaxThreasholdActivationCondition"
+          features="//@pouex/@features.0"
+          name="if to much fat"
+          threshold="100.0"/>
+      <activationConditions
+          xsi:type="pouexmm:MaxThreasholdActivationCondition"
+          features="//@pouex/@features.2"
+          name="if to much dirty"
+          threshold="9.0"/>
+      <activationConditions
+          xsi:type="pouexmm:MinThreasholdActivationCondition"
+          features="//@pouex/@features.5"
+          name="if to much old"
+          threshold="100.0"/>
+    </states>
+    <states
+        name="Dirty">
+      <activationConditions
+          xsi:type="pouexmm:MaxThreasholdActivationCondition"
+          features="//@pouex/@features.2"
+          name="if to much dirty"
+          threshold="7.0"/>
+    </states>
+    <states
+        name="Tired">
+      <activationConditions
+          xsi:type="pouexmm:MinThreasholdActivationCondition"
+          features="//@pouex/@features.4"
+          name="when is tired"
+          threshold="8.0"/>
+    </states>
+    <actions
+        name="Clean">
+      <influences
+          feature="//@pouex/@features.2"
+          operator="SUBTRACTION"
+          value="1.0"/>
+    </actions>
+    <actions
+        name="Eat">
+      <influences
+          feature="//@pouex/@features.0"
+          value="0.1"/>
+    </actions>
+    <actions
+        name="Play">
+      <influences
+          feature="//@pouex/@features.4"
+          value="0.2"/>
+      <influences
+          feature="//@pouex/@features.1"
+          value="0.2"/>
+      <influences
+          feature="//@pouex/@features.3"
+          value="0.1"/>
+      <influences
+          feature="//@pouex/@features.0"
+          value="0.05"/>
+    </actions>
+    <bodyparts
+        name="Eye SX"/>
+    <bodyparts
+        name="Eye DX"/>
+  </pouex>
+  <timeEvents
+      name="Time passes"
+      eachMillisec="1000">
+    <influences
+        feature="//@pouex/@features.2"
+        value="0.1"/>
+    <influences
+        feature="//@pouex/@features.1"
+        operator="SUBTRACTION"
+        value="0.1"/>
+    <influences
+        feature="//@pouex/@features.0"
+        operator="SUBTRACTION"
+        value="0.05"/>
+    <influences
+        feature="//@pouex/@features.5"
+        value="0.1"/>
+  </timeEvents>
+</pouexmm:Game>

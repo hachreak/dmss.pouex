@@ -4,9 +4,11 @@
   - basic actions: play, eat, clean, sleep, medication
   
 * OCL: 
-  - Each feature have to define: name, initial, minumum, maximum values, type
+  + Each Pouex feature have to define: name, default, minumum, maximum values, type
   - At least should exist one defined action that can modify each features
   - One action can't modify level of a feature twice in succession 
+  - Pouex must have a name
+  - Pouex mush have at least one BodyPart
 
 * Changes to control:
   - for each PouexEvent should have the possibility to define features of the event (like how many players, ...) 

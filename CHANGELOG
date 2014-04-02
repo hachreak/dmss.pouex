@@ -1,0 +1,18 @@
+CHANGELOG
+
+v0.1
+ - FeatureEvent: replace a threshold with optional fields minimumThreshold and maximumThreshold
+ - ActivationCondition is abstract!
+ - ActivationCondition: extent this type of Class with ThreasholdActivationCondition to represent activation condition with a threshold.
+ - Extend ThreasholdActivationCondition with ActivationConditionMinThreashold (if you reach a minimum level), ActivationConditionMaxThreashold (if you reach a minimum level)
+ - Rename FeatureType in InfluenceType: to be used also in other context
+ - Influence: add operator and value.
+ - Change: instead use Integer, use a much generic Double
+ - Can remove Feature Event?
+ - PouexFeature: change name of attribute "initial" to "default"
+ - Created a "RepeatedAction" like a subclass of Action and ancestor of TimeEvent and PeriodicPouexAction
+ - Action: add a enum ActionStatus to define the current status.
+ - Pouex: add periodic actions
+ - Add model/test where put examples to test OCL rules 
+ - Add First OCL rule to test Pouex name
+ 
