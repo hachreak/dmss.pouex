@@ -12,36 +12,31 @@
   <eClassifiers xsi:type="ecore:EClass" name="Game">
     <eStructuralFeatures xsi:type="ecore:EReference" name="pouex" lowerBound="1" eType="#//Pouex"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="timeEvents" upperBound="-1"
-        eType="#//TimeEvent" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Pouex">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="defineName cantExistTwoFeatureWithSameName"/>
+      <details key="constraints" value="defineName cantExistTwoFeatureWithSameName atLeastOneActionForEachFeature"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
       <details key="defineName" value="not self.name.oclIsUndefined() and self.name &lt;> ''"/>
       <details key="cantExistTwoFeatureWithSameName" value="self.features->isUnique(f: PouexFeature | f.name)"/>
+      <details key="atLeastOneActionForEachFeature" value="self.features->forAll(f: PouexFeature | self.actions.influences.feature->exists(inf_feature: PouexFeature | inf_feature = f))"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="features" upperBound="-1"
         eType="#//PouexFeature" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="states" upperBound="-1"
         eType="#//State" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="actions" upperBound="-1"
-        eType="#//PouexAction" containment="true"/>
+        eType="#//Action" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="bodyparts" upperBound="-1"
         eType="#//BodyPart" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="periodicActions" upperBound="-1"
-        eType="#//PeriodicPouexAction" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PouexFeature" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="default" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="minimum" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="maximum" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//InfluenceType"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="event" upperBound="-1"
-        eType="#//FeatureEvent" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Physic" eSuperTypes="#//PouexFeature"/>
@@ -78,10 +73,6 @@
     <eLiterals name="POSITIVE"/>
     <eLiterals name="NEGATIVE" value="1"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FeatureEvent" eSuperTypes="#//Action">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minimalThreshold" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maximumThreshold" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BodyPart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="subparts" upperBound="-1"
         eType="#//BodyPart" containment="true"/>
@@ -107,10 +98,9 @@
     <eLiterals name="DIVISION" value="3"/>
     <eLiterals name="MODULE" value="4"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RepeatedAction" abstract="true" eSuperTypes="#//Action">
+  <eClassifiers xsi:type="ecore:EClass" name="RepeatedAction" eSuperTypes="#//Action">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="eachMillisec" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PeriodicPouexAction" eSuperTypes="#//RepeatedAction"/>
   <eClassifiers xsi:type="ecore:EEnum" name="ActionStatus">
     <eLiterals name="ENABLED"/>
     <eLiterals name="DISABLED" value="1"/>

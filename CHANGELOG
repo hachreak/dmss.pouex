@@ -1,4 +1,12 @@
 CHANGELOG
+
+v0.3
+ - Simplifying the model: include TimeEvent as a Pouex's event. Remove periodicActions in Pouex and put all inside actions.
+ - Change the GameTest01.xmi accordingly.
+ - Remove FeatureEvent
+ - OCL atLeastOneActionForEachFeature: At least should exist one defined action that can modify each features
+ 
+
 v0.2
  - OCL cantModifyFeatureTwiceOrMore: One action can't modify level of a feature twice in succession
  - OCL cantExistTwoFeatureWithSameName: Can't exist two feature with the same name.

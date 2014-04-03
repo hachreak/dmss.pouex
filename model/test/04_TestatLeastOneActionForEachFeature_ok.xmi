@@ -16,12 +16,14 @@
         default="4.0"
         maximum="10.0"
         name="Happiness"/>
+    <features
+        xsi:type="pouexmm:Physic"
+        default="4.0"
+        maximum="10.0"
+        name="Dirty"/>
     <actions
         xsi:type="pouexmm:PouexAction"
-        name="test">
-      <influences
-          feature="//@pouex/@features.0"
-          value="1.0"/>
+        name="myaction">
       <influences
           feature="//@pouex/@features.1"
           operator="MULTIPLICATION"

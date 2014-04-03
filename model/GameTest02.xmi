@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ASCII"?>
+<pouexmm:Game
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:pouexmm="http://pouexmm/1.0"
+    xsi:schemaLocation="http://pouexmm/1.0 ../metamodel/PouexMM.ecore">
+  <pouex name="Paperino">
+    <features
+        xsi:type="pouexmm:Physic"
+        default="20.0"
+        maximum="100.0"
+        name="Width"/>
+    <actions
+        xsi:type="pouexmm:PouexAction"
+        name="new event">
+      <influences
+          feature="//@pouex/@features.0"
+          operator="SUBTRACTION"
+          value="4.0"/>
+    </actions>
+  </pouex>
+</pouexmm:Game>

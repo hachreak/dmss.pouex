@@ -23,7 +23,7 @@
         maximum="20.0"
         type="NEGATIVE"
         name="weight"/>
-    <actions
+    <actions xsi:type="pouexmm:PouexAction"
         name="myaction">
       <influences
           feature="//@pouex/@features.1"
