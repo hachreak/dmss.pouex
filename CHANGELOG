@@ -1,4 +1,7 @@
 CHANGELOG
+v0.2
+ - OCL cantModifyFeatureTwiceOrMore: One action can't modify level of a feature twice in succession
+ - OCL cantExistTwoFeatureWithSameName: Can't exist two feature with the same name.
 
 v0.1
  - FeatureEvent: replace a threshold with optional fields minimumThreshold and maximumThreshold

@@ -5,8 +5,9 @@
   
 * OCL: 
   + Each Pouex feature have to define: name, default, minumum, maximum values, type
+  + Can't exist two feature with the same name.
   - At least should exist one defined action that can modify each features
-  - One action can't modify level of a feature twice in succession 
+  + One action can't modify level of a feature twice in succession 
   - Pouex must have a name
   - Pouex mush have at least one BodyPart
 

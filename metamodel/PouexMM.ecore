@@ -17,10 +17,11 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Pouex">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="defineName"/>
+      <details key="constraints" value="defineName cantExistTwoFeatureWithSameName"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
       <details key="defineName" value="not self.name.oclIsUndefined() and self.name &lt;> ''"/>
+      <details key="cantExistTwoFeatureWithSameName" value="self.features->isUnique(f: PouexFeature | f.name)"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="features" upperBound="-1"
         eType="#//PouexFeature" containment="true"/>
@@ -55,6 +56,12 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Action" abstract="true">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="cantModifyFeatureTwiceOrMore"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="cantModifyFeatureTwiceOrMore" value="self.influences->isUnique(i: Influence | i.feature.name)"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="influences" upperBound="-1"
         eType="#//Influence" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
