@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/dmss.pouex/src" modelPluginID="dmss.pouex" modelName="PouexMM"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>PouexMM.ecore</foreignModel>
+  <genPackages prefix="Pouexmm" basePackage="dmss.pouex" disposableProviderFactory="true"
+      ecorePackage="PouexMM.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="PouexMM.ecore#//InfluenceType">
+      <genEnumLiterals ecoreEnumLiteral="PouexMM.ecore#//InfluenceType/POSITIVE"/>
+      <genEnumLiterals ecoreEnumLiteral="PouexMM.ecore#//InfluenceType/NEGATIVE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="PouexMM.ecore#//MathematicOperator">
+      <genEnumLiterals ecoreEnumLiteral="PouexMM.ecore#//MathematicOperator/ADDITION"/>
+      <genEnumLiterals ecoreEnumLiteral="PouexMM.ecore#//MathematicOperator/SUBTRACTION"/>
+      <genEnumLiterals ecoreEnumLiteral="PouexMM.ecore#//MathematicOperator/MULTIPLICATION"/>
+      <genEnumLiterals ecoreEnumLiteral="PouexMM.ecore#//MathematicOperator/DIVISION"/>
+      <genEnumLiterals ecoreEnumLiteral="PouexMM.ecore#//MathematicOperator/MODULE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="PouexMM.ecore#//ActionStatus">
+      <genEnumLiterals ecoreEnumLiteral="PouexMM.ecore#//ActionStatus/ENABLED"/>
+      <genEnumLiterals ecoreEnumLiteral="PouexMM.ecore#//ActionStatus/DISABLED"/>
+    </genEnums>
+    <genClasses ecoreClass="PouexMM.ecore#//Game">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PouexMM.ecore#//Game/pouex"/>
+    </genClasses>
+    <genClasses ecoreClass="PouexMM.ecore#//Pouex">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PouexMM.ecore#//Pouex/features"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PouexMM.ecore#//Pouex/states"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PouexMM.ecore#//Pouex/actions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PouexMM.ecore#//Pouex/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PouexMM.ecore#//Pouex/bodyparts"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="PouexMM.ecore#//PouexFeature">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PouexMM.ecore#//PouexFeature/default"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PouexMM.ecore#//PouexFeature/minimum"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PouexMM.ecore#//PouexFeature/maximum"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PouexMM.ecore#//PouexFeature/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PouexMM.ecore#//PouexFeature/name"/>
+    </genClasses>
+    <genClasses ecoreClass="PouexMM.ecore#//Physic"/>
+    <genClasses ecoreClass="PouexMM.ecore#//Emotional"/>
+    <genClasses ecoreClass="PouexMM.ecore#//State">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PouexMM.ecore#//State/activationConditions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PouexMM.ecore#//State/name"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="PouexMM.ecore#//ActivationCondition">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PouexMM.ecore#//ActivationCondition/features"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PouexMM.ecore#//ActivationCondition/name"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="PouexMM.ecore#//Action">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PouexMM.ecore#//Action/influences"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PouexMM.ecore#//Action/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PouexMM.ecore#//Action/currentStatus"/>
+    </genClasses>
+    <genClasses ecoreClass="PouexMM.ecore#//TimeEvent"/>
+    <genClasses ecoreClass="PouexMM.ecore#//Influence">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PouexMM.ecore#//Influence/feature"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PouexMM.ecore#//Influence/operator"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PouexMM.ecore#//Influence/value"/>
+    </genClasses>
+    <genClasses ecoreClass="PouexMM.ecore#//BodyPart">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PouexMM.ecore#//BodyPart/subparts"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PouexMM.ecore#//BodyPart/name"/>
+    </genClasses>
+    <genClasses ecoreClass="PouexMM.ecore#//PouexAction">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PouexMM.ecore#//PouexAction/subtype"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PouexMM.ecore#//PouexAction/features"/>
+    </genClasses>
+    <genClasses ecoreClass="PouexMM.ecore#//PouexActionFeature"/>
+    <genClasses ecoreClass="PouexMM.ecore#//MinThresholdActivationCondition"/>
+    <genClasses ecoreClass="PouexMM.ecore#//MaxThresholdActivationCondition"/>
+    <genClasses image="false" ecoreClass="PouexMM.ecore#//ThresholdActivationCondition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PouexMM.ecore#//ThresholdActivationCondition/threshold"/>
+    </genClasses>
+    <genClasses ecoreClass="PouexMM.ecore#//RepeatedAction">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PouexMM.ecore#//RepeatedAction/eachMillisec"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
