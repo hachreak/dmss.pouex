@@ -33,13 +33,5 @@
           operator="DIVISION"
           value="2.0"/>
     </actions>
-    <actions
-        xsi:type="pouexmm:TimeEvent"
-        name="time"
-        eachMillisec="1000.0">
-      <influences
-          feature="//@pouex/@features.2"
-          value="1.0"/>
-    </actions>
   </pouex>
 </pouexmm:Game>

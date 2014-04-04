@@ -1,5 +1,14 @@
 CHANGELOG
 
+v0.4
+ - Add test of OCL atLeastOneActionForEachFeature that validate.
+ - OCL PouexFeature coherentValueMinDefaultMax: value must be minimum <= default <= maximum
+ - Add different test (05) for OCL PouexFeature coherentValueMinDefaultMax
+ - Add test for OCL CantModifyFeatureTwiceOrMore for subtype of a Action (06_TestSubTypeActionCantModifyFeatureTwiceOrMore.xmi)
+ - Fix Threshold class names.
+ - Update README of ecore
+    
+
 v0.3
  - Simplifying the model: include TimeEvent as a Pouex's event. Remove periodicActions in Pouex and put all inside actions.
  - Change the GameTest01.xmi accordingly.

@@ -276,7 +276,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_sAJbs7qIEeOzwvctV6FS8g"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_sAFxUbqIEeOzwvctV6FS8g" fontColor="4210752" fontName="Cantarell" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="PouexMM.ecore#//MinThreasholdActivationCondition"/>
+    <element xmi:type="ecore:EClass" href="PouexMM.ecore#//MinThresholdActivationCondition"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sAFxUrqIEeOzwvctV6FS8g" x="804" y="588"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_M0rBsLqJEeOzwvctV6FS8g" type="1001">
@@ -292,7 +292,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_M0s247qJEeOzwvctV6FS8g"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_M0rBsbqJEeOzwvctV6FS8g" fontColor="4210752" fontName="Cantarell" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="PouexMM.ecore#//MaxThreasholdActivationCondition"/>
+    <element xmi:type="ecore:EClass" href="PouexMM.ecore#//MaxThresholdActivationCondition"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_M0rBsrqJEeOzwvctV6FS8g" x="1044" y="588"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_XL57QLqJEeOzwvctV6FS8g" type="1001">
@@ -308,7 +308,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_XL6iWLqJEeOzwvctV6FS8g"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_XL57QbqJEeOzwvctV6FS8g" fontColor="4210752" fontName="Cantarell" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="PouexMM.ecore#//ThreasholdActivationCondition"/>
+    <element xmi:type="ecore:EClass" href="PouexMM.ecore#//ThresholdActivationCondition"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XL57QrqJEeOzwvctV6FS8g" x="864" y="468"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_4uNQcLqNEeOzwvctV6FS8g" type="1005">
