@@ -1,6 +1,7 @@
 - Game: it define the environment of the game for a Pouex
+  - LiveObject
   - Pouex: it define a Pouex for the game. It contains a series of actions, features, states and body parts.
-    - PouexFeature: describe a Puex's feature (like the weight). Each feature can be a Physic Feature or Emotional Feature.
+    - Feature: describe a Puex's feature (like the weight). Each feature can be a Physic Feature or Emotional Feature.
       - Physic
       - Emotional
     - State: it define a Pouex's state.

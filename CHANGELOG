@@ -1,5 +1,10 @@
 CHANGELOG
 
+v0.5
+ - BodyPart: add a url for a image 
+ - Generalized the concept of "Live Object": now, also a body part can have features, actions and states.
+ - Change name of PouexFeature to Feature
+
 v0.4
  - Add test of OCL atLeastOneActionForEachFeature that validate.
  - OCL PouexFeature coherentValueMinDefaultMax: value must be minimum <= default <= maximum

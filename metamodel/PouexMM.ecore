@@ -13,7 +13,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="pouex" lowerBound="1" eType="#//Pouex"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Pouex">
+  <eClassifiers xsi:type="ecore:EClass" name="Pouex" eSuperTypes="#//LiveObject">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="defineName cantExistTwoFeatureWithSameName atLeastOneActionForEachFeature"/>
     </eAnnotations>
@@ -22,17 +22,11 @@
       <details key="cantExistTwoFeatureWithSameName" value="self.features->isUnique(f: PouexFeature | f.name)"/>
       <details key="atLeastOneActionForEachFeature" value="self.features->forAll(f: PouexFeature | self.actions.influences.feature->exists(inf_feature: PouexFeature | inf_feature = f))"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="features" upperBound="-1"
-        eType="#//PouexFeature" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="states" upperBound="-1"
-        eType="#//State" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="actions" upperBound="-1"
-        eType="#//Action" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="bodyparts" lowerBound="1"
         upperBound="-1" eType="#//BodyPart" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PouexFeature" abstract="true">
+  <eClassifiers xsi:type="ecore:EClass" name="Feature" abstract="true">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="coherentValueMinDefaultMax"/>
     </eAnnotations>
@@ -48,15 +42,15 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//InfluenceType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Physic" eSuperTypes="#//PouexFeature"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Emotional" eSuperTypes="#//PouexFeature"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Physic" eSuperTypes="#//Feature"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Emotional" eSuperTypes="#//Feature"/>
   <eClassifiers xsi:type="ecore:EClass" name="State">
     <eStructuralFeatures xsi:type="ecore:EReference" name="activationConditions" lowerBound="1"
         upperBound="-1" eType="#//ActivationCondition" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ActivationCondition" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="features" eType="#//PouexFeature"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="features" eType="#//Feature"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Action" abstract="true">
@@ -74,7 +68,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="TimeEvent" eSuperTypes="#//RepeatedAction"/>
   <eClassifiers xsi:type="ecore:EClass" name="Influence">
     <eStructuralFeatures xsi:type="ecore:EReference" name="feature" lowerBound="1"
-        eType="#//PouexFeature"/>
+        eType="#//Feature"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="#//MathematicOperator"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
   </eClassifiers>
@@ -82,10 +76,11 @@
     <eLiterals name="POSITIVE"/>
     <eLiterals name="NEGATIVE" value="1"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BodyPart">
+  <eClassifiers xsi:type="ecore:EClass" name="BodyPart" eSuperTypes="#//LiveObject">
     <eStructuralFeatures xsi:type="ecore:EReference" name="subparts" upperBound="-1"
         eType="#//BodyPart" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="image" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PouexAction" eSuperTypes="#//Action">
     <eStructuralFeatures xsi:type="ecore:EReference" name="subtype" upperBound="-1"
@@ -115,5 +110,13 @@
   <eClassifiers xsi:type="ecore:EEnum" name="ActionStatus">
     <eLiterals name="ENABLED"/>
     <eLiterals name="DISABLED" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LiveObject">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actions" upperBound="-1"
+        eType="#//Action" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="states" upperBound="-1"
+        eType="#//State" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="features" upperBound="-1"
+        eType="#//Feature" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>
