@@ -25,18 +25,15 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PouexMM.ecore#//Game/pouex"/>
     </genClasses>
     <genClasses ecoreClass="PouexMM.ecore#//Pouex">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PouexMM.ecore#//Pouex/features"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PouexMM.ecore#//Pouex/states"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PouexMM.ecore#//Pouex/actions"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PouexMM.ecore#//Pouex/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PouexMM.ecore#//Pouex/bodyparts"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="PouexMM.ecore#//PouexFeature">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PouexMM.ecore#//PouexFeature/default"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PouexMM.ecore#//PouexFeature/minimum"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PouexMM.ecore#//PouexFeature/maximum"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PouexMM.ecore#//PouexFeature/type"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PouexMM.ecore#//PouexFeature/name"/>
+    <genClasses image="false" ecoreClass="PouexMM.ecore#//Feature">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PouexMM.ecore#//Feature/default"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PouexMM.ecore#//Feature/minimum"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PouexMM.ecore#//Feature/maximum"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PouexMM.ecore#//Feature/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PouexMM.ecore#//Feature/name"/>
     </genClasses>
     <genClasses ecoreClass="PouexMM.ecore#//Physic"/>
     <genClasses ecoreClass="PouexMM.ecore#//Emotional"/>
@@ -62,6 +59,7 @@
     <genClasses ecoreClass="PouexMM.ecore#//BodyPart">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PouexMM.ecore#//BodyPart/subparts"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PouexMM.ecore#//BodyPart/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PouexMM.ecore#//BodyPart/image"/>
     </genClasses>
     <genClasses ecoreClass="PouexMM.ecore#//PouexAction">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PouexMM.ecore#//PouexAction/subtype"/>
@@ -75,6 +73,11 @@
     </genClasses>
     <genClasses ecoreClass="PouexMM.ecore#//RepeatedAction">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PouexMM.ecore#//RepeatedAction/eachMillisec"/>
+    </genClasses>
+    <genClasses ecoreClass="PouexMM.ecore#//LiveObject">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PouexMM.ecore#//LiveObject/actions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PouexMM.ecore#//LiveObject/states"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PouexMM.ecore#//LiveObject/features"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

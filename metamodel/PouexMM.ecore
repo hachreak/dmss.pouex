@@ -105,7 +105,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RepeatedAction" eSuperTypes="#//Action">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="eachMillisec" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble" defaultValueLiteral="1000"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ActionStatus">
     <eLiterals name="ENABLED"/>
