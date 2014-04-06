@@ -1,5 +1,17 @@
 CHANGELOG
 
+v0.6
+ - Fix change of Feature's name in OCL rules.
+ - ecore: move Pouex OCL rules in LiveObject
+ - Add StateActivationCondition: new kind of Activation condition dependent of a state
+ - add OCL rule ActionNameMustBeUnique to control if name is unique.
+ - add OCL rule StateNameMustBeUnique to control if name is unique.
+ - Rename OCL cantExistTwoFeatureWithSameName in FeatureNameMustBeUnique
+ - Add Test 07_TestActionNameMustBeUnique.xmi e 08_TestStateNameMustBeUnique.xmi
+ - Rename test 03_TestFeatureNameMustBeUnique.xmi in 03_TestFeatureNameMustBeUnique.xmi
+ - Fix GameTest02: add a BodyPart
+ - Add Test 04_TestAtLeastOneActionForEachFeature_error2.xmi to control if detect disabled actions
+
 v0.5.1
  - Set default value for eachMillisec = 1000
  - Remove src

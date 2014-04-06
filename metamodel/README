@@ -9,6 +9,7 @@
         - ThresholdActivationCondition: it's a kind of Activation Condition focused on a "threshold"
           - MinThresholdActivationCondition: minimum threshold
           - MaxThresholdActivationCondition: maximum threshold
+        - StateActivationCondition: it's a kind of Activation Condition focused on a activation of another state
     - BodyPart: define a body part of Pouex (e.g: the eye).
   - Action: it define a abstract action. 
     - PouexAction: the developer can associate many different actions implemented by a Pouex.

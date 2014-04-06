@@ -3,24 +3,8 @@
     xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:pouexmm="http://pouexmm/1.0"
-    xsi:schemaLocation="http://pouexmm/1.0 ../../metamodel/PouexMM.ecore">
+    xmlns:pouexmm="http://pouexmm/1.0">
   <pouex name="Pluto">
-    <features
-        xsi:type="pouexmm:Physic"
-        default="3.0"
-        maximum="10.0"
-        name="weight"/>
-    <features
-        xsi:type="pouexmm:Emotional"
-        default="4.0"
-        maximum="10.0"
-        name="Happiness"/>
-    <features
-        xsi:type="pouexmm:Physic"
-        default="4.0"
-        maximum="10.0"
-        name="Dirty"/>
     <actions
         xsi:type="pouexmm:PouexAction"
         name="myaction">
@@ -36,10 +20,27 @@
     <actions
         xsi:type="pouexmm:TimeEvent"
         name="time"
-        eachMillisec="1000.0">
+        currentStatus="DISABLED">
       <influences
           feature="//@pouex/@features.2"
           value="1.0"/>
     </actions>
+    <features
+        xsi:type="pouexmm:Physic"
+        default="3.0"
+        maximum="10.0"
+        name="weight"/>
+    <features
+        xsi:type="pouexmm:Emotional"
+        default="4.0"
+        maximum="10.0"
+        name="Happiness"/>
+    <features
+        xsi:type="pouexmm:Physic"
+        default="4.0"
+        maximum="10.0"
+        name="Dirty"/>
+    <bodyparts
+        name=""/>
   </pouex>
 </pouexmm:Game>

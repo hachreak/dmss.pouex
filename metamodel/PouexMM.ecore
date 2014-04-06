@@ -15,12 +15,10 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Pouex" eSuperTypes="#//LiveObject">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="defineName cantExistTwoFeatureWithSameName atLeastOneActionForEachFeature"/>
+      <details key="constraints" value="defineName"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
       <details key="defineName" value="not self.name.oclIsUndefined() and self.name &lt;> ''"/>
-      <details key="cantExistTwoFeatureWithSameName" value="self.features->isUnique(f: PouexFeature | f.name)"/>
-      <details key="atLeastOneActionForEachFeature" value="self.features->forAll(f: PouexFeature | self.actions.influences.feature->exists(inf_feature: PouexFeature | inf_feature = f))"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="bodyparts" lowerBound="1"
@@ -112,11 +110,23 @@
     <eLiterals name="DISABLED" value="1"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LiveObject">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="atLeastOneActionForEachFeature ActionNameMustBeUnique FeatureNameMustBeUnique StateNameMustBeUnique"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="atLeastOneActionForEachFeature" value="self.features->forAll(f: Feature | self.actions->select(a: Action | a.currentStatus = ActionStatus::ENABLED).influences.feature->exists(inf_feature: Feature | inf_feature = f))"/>
+      <details key="ActionNameMustBeUnique" value="self.actions->isUnique(a: Action | a.name)"/>
+      <details key="FeatureNameMustBeUnique" value="self.features->isUnique(f: Feature | f.name)"/>
+      <details key="StateNameMustBeUnique" value="self.states->isUnique(s: State | s.name)"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="actions" upperBound="-1"
         eType="#//Action" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="states" upperBound="-1"
         eType="#//State" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="features" upperBound="-1"
         eType="#//Feature" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StateActivationCondition" eSuperTypes="#//ActivationCondition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="state" eType="#//State"/>
   </eClassifiers>
 </ecore:EPackage>

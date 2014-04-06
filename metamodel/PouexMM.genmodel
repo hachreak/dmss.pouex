@@ -79,5 +79,8 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PouexMM.ecore#//LiveObject/states"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PouexMM.ecore#//LiveObject/features"/>
     </genClasses>
+    <genClasses ecoreClass="PouexMM.ecore#//StateActivationCondition">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PouexMM.ecore#//StateActivationCondition/state"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

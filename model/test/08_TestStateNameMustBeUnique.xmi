@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ASCII"?>
+<pouexmm:Game
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:pouexmm="http://pouexmm/1.0">
+  <pouex name="Pluto">
+    <actions
+        xsi:type="pouexmm:PouexAction"
+        name="test">
+      <influences
+          feature="//@pouex/@features.0"
+          value="1.0"/>
+      <influences
+          feature="//@pouex/@features.1"
+          operator="MULTIPLICATION"
+          value="3.0"/>
+    </actions>
+    <features
+        xsi:type="pouexmm:Physic"
+        default="3.0"
+        maximum="10.0"
+        name="weight"/>
+    <features
+        xsi:type="pouexmm:Emotional"
+        default="4.0"
+        maximum="10.0"
+        name="Happiness"/>
+    <bodyparts
+        name="Face">
+      <states
+          name="testname"/>
+      <states
+          name="newname"/>
+      <states
+          name="testname"/>
+    </bodyparts>
+  </pouex>
+</pouexmm:Game>

@@ -5,6 +5,12 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:pouexmm="http://pouexmm/1.0">
   <pouex name="MyPou">
+    <actions
+        xsi:type="pouexmm:PouexAction"
+        name="change sleep">
+      <influences
+          feature="//@pouex/@features.0"/>
+    </actions>
     <features
         xsi:type="pouexmm:Emotional"
         default="5.0"
