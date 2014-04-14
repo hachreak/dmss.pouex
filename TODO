@@ -1,3 +1,4 @@
+
 * Feature examples:
   - basic physic features: weight, height, mascot's breed, dirt
   - basic emotional features: happiness, sadness, health
@@ -10,9 +11,13 @@
   + One action can't modify level of a feature twice in succession 
   + Pouex must have a name
   + Pouex mush have at least one BodyPart
+  - State.activation_condition.state2 != state: can't have recursion.
 
 * Changes to control:
-  - for each PouexEvent should have the possibility to define features of the event (like how many players, ...) 
+  - for each PouexEvent should have the possibility to define features of the event (like how many players, ...)
     
 * Changes done:
   - how is implemented the events. Need to distinguish "environment event" like TimeEvent to PouexEvent like "Play"
+  - BodyPart should not be a LiveObject, a State can alter one or more BodyPart 
+  - delete PouexActionFeature and subtype of PouexAction
+  

@@ -11,6 +11,16 @@
       <influences
           feature="//@pouex/@features.0"/>
     </actions>
+    <states
+        name="TestStato">
+      <activationConditions
+          xsi:type="pouexmm:StateActivationCondition"
+          features="//@pouex/@features.0"
+          name="TestStato2"
+          state="//@pouex/@states.0"/>
+    </states>
+    <states
+        name="TestStato3"/>
     <features
         xsi:type="pouexmm:Emotional"
         default="5.0"

@@ -46,9 +46,12 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="activationConditions" lowerBound="1"
         upperBound="-1" eType="#//ActivationCondition" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bodyAlterations" upperBound="-1"
+        eType="#//BodyAlteration" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ActivationCondition" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="features" eType="#//Feature"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="features" lowerBound="1"
+        eType="#//Feature"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Action" abstract="true">
@@ -74,19 +77,13 @@
     <eLiterals name="POSITIVE"/>
     <eLiterals name="NEGATIVE" value="1"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BodyPart" eSuperTypes="#//LiveObject">
+  <eClassifiers xsi:type="ecore:EClass" name="BodyPart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="subparts" upperBound="-1"
         eType="#//BodyPart" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="image" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PouexAction" eSuperTypes="#//Action">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="subtype" upperBound="-1"
-        eType="#//PouexAction" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="features" upperBound="-1"
-        eType="#//PouexActionFeature" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PouexActionFeature"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PouexAction" eSuperTypes="#//Action"/>
   <eClassifiers xsi:type="ecore:EClass" name="MinThresholdActivationCondition" eSuperTypes="#//ThresholdActivationCondition"/>
   <eClassifiers xsi:type="ecore:EClass" name="MaxThresholdActivationCondition" eSuperTypes="#//ThresholdActivationCondition"/>
   <eClassifiers xsi:type="ecore:EClass" name="ThresholdActivationCondition" abstract="true"
@@ -128,5 +125,9 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StateActivationCondition" eSuperTypes="#//ActivationCondition">
     <eStructuralFeatures xsi:type="ecore:EReference" name="state" eType="#//State"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BodyAlteration">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bodyPart" lowerBound="1"
+        eType="#//BodyPart"/>
   </eClassifiers>
 </ecore:EPackage>

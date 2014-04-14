@@ -1,5 +1,11 @@
 CHANGELOG
 
+v0.7
+ - Delete inheritance of BodyPart to LiveObject. Only Pouex can have features, states and actions.
+ - A State can alter one or more BodyPart.
+ - An ActionCondition must have a Feature associated.
+ - Deleted PouexActionFeature and a subtype from PouexAction.
+ 
 v0.6
  - Fix change of Feature's name in OCL rules.
  - ecore: move Pouex OCL rules in LiveObject
