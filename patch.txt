@@ -1,0 +1,18 @@
+dsl:
+Remove Enum and replace with:
+
+enum InfluenceType:
+	POSITIVE = 'positive' | NEGATIVE = 'negative'
+; 
+
+enum ActionStatus:
+	ENABLED = 'enabled' |
+	DISABLED = 'disabled'
+;
+
+enum MathematicOperator: 
+	ADDITION = 'addition' | 
+	SUBTRACTION = 'subtraction' | 
+	MULTIPLICATION = 'multiplication' | 
+	DIVISION = 'division' | 
+	MODULE = 'module';

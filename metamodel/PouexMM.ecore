@@ -12,6 +12,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Game">
     <eStructuralFeatures xsi:type="ecore:EReference" name="pouex" lowerBound="1" eType="#//Pouex"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Pouex" eSuperTypes="#//LiveObject">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
@@ -39,6 +40,7 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//InfluenceType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="MeasurementUnit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Physic" eSuperTypes="#//Feature"/>
   <eClassifiers xsi:type="ecore:EClass" name="Emotional" eSuperTypes="#//Feature"/>
@@ -50,8 +52,6 @@
         eType="#//BodyAlteration" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ActivationCondition" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="features" lowerBound="1"
-        eType="#//Feature"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Action" abstract="true">
@@ -79,9 +79,16 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BodyPart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="subparts" upperBound="-1"
-        eType="#//BodyPart" containment="true"/>
+        eType="#//BodyPart" containment="true" eOpposite="#//BodyPart/parent"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="image" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parent" eType="#//BodyPart"
+        eOpposite="#//BodyPart/subparts"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="height" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="left" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="top" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PouexAction" eSuperTypes="#//Action"/>
   <eClassifiers xsi:type="ecore:EClass" name="MinThresholdActivationCondition" eSuperTypes="#//ThresholdActivationCondition"/>
@@ -90,6 +97,8 @@
       eSuperTypes="#//ActivationCondition">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="threshold" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="features" lowerBound="1"
+        eType="#//Feature"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="MathematicOperator">
     <eLiterals name="ADDITION"/>
@@ -125,9 +134,12 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StateActivationCondition" eSuperTypes="#//ActivationCondition">
     <eStructuralFeatures xsi:type="ecore:EReference" name="state" eType="#//State"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="condition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BodyAlteration">
     <eStructuralFeatures xsi:type="ecore:EReference" name="bodyPart" lowerBound="1"
         eType="#//BodyPart"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="image" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StateDead" eSuperTypes="#//State"/>
 </ecore:EPackage>

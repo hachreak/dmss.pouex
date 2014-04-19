@@ -1,5 +1,16 @@
 CHANGELOG
 
+v0.8
+ - Add Game name.
+ - Add in BodyAlternation a image name.
+ - Add a GameDemo to use to generate a HTML5 demo.
+ - Added a unit of measurement in Feature.
+ - Add a StateDead to model the dead of Pouex.
+ - Move "features" from ActivationCondition to ThresholdActivationCondition.
+ - Add "condition" in StateActivationCondition. Now can active a state if if enabled or disabled another.
+ - Add in BodyPart a "parent" relation.
+ - Add in BodyPart a width and height, left and top to define position.
+ 
 v0.7
  - Delete inheritance of BodyPart to LiveObject. Only Pouex can have features, states and actions.
  - A State can alter one or more BodyPart.

@@ -20,7 +20,13 @@
           state="//@pouex/@states.0"/>
     </states>
     <states
-        name="TestStato3"/>
+        name="TestStato3">
+      <activationConditions
+          xsi:type="pouexmm:MinThresholdActivationCondition"
+          features="//@pouex/@features.0"
+          name="fuu"
+          threshold="2.0"/>
+    </states>
     <features
         xsi:type="pouexmm:Emotional"
         default="5.0"
@@ -34,15 +40,7 @@
           image="eye.jpg"/>
       <subparts
           name="eye dx"
-          image="eye.jpg">
-        <actions
-            xsi:type="pouexmm:PouexAction"
-            name="close">
-          <influences
-              feature="//@pouex/@features.0"
-              value="0.1"/>
-        </actions>
-      </subparts>
+          image="eye.jpg"/>
     </bodyparts>
   </pouex>
 </pouexmm:Game>

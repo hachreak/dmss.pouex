@@ -4,38 +4,65 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:pouexmm="http://pouexmm/1.0"
-    xsi:schemaLocation="http://pouexmm/1.0 ../metamodel/PouexMM.ecore">
+    name="index">
   <pouex name="Pippo">
-    <features
-        xsi:type="pouexmm:Physic"
-        default="5.0"
-        minimum="1.0"
-        maximum="100.0"
-        name="weight"/>
-    <features
-        xsi:type="pouexmm:Emotional"
-        default="5.0"
-        maximum="10.0"
-        name="happiness"/>
-    <features
-        xsi:type="pouexmm:Physic"
-        default="3.0"
-        maximum="10.0"
-        name="Dirty"/>
-    <features
-        xsi:type="pouexmm:Emotional"
-        default="5.0"
-        maximum="10.0"
-        name="Hungry"/>
-    <features
-        xsi:type="pouexmm:Physic"
-        default="3.0"
-        maximum="10.0"
-        name="Tiredness"/>
-    <features
-        xsi:type="pouexmm:Physic"
-        maximum="100.0"
-        name="Age"/>
+    <actions
+        xsi:type="pouexmm:PouexAction"
+        name="Clean">
+      <influences
+          feature="//@pouex/@features.2"
+          operator="SUBTRACTION"
+          value="1.0"/>
+    </actions>
+    <actions
+        xsi:type="pouexmm:PouexAction"
+        name="Eat">
+      <influences
+          feature="//@pouex/@features.0"
+          value="0.1"/>
+    </actions>
+    <actions
+        xsi:type="pouexmm:PouexAction"
+        name="Play">
+      <influences
+          feature="//@pouex/@features.4"
+          value="0.2"/>
+      <influences
+          feature="//@pouex/@features.1"
+          value="0.2"/>
+      <influences
+          feature="//@pouex/@features.3"
+          value="0.1"/>
+      <influences
+          feature="//@pouex/@features.0"
+          value="0.05"/>
+    </actions>
+    <actions
+        xsi:type="pouexmm:TimeEvent"
+        name="Time passes">
+      <influences
+          feature="//@pouex/@features.2"
+          value="0.1"/>
+      <influences
+          feature="//@pouex/@features.1"
+          operator="SUBTRACTION"
+          value="0.1"/>
+      <influences
+          feature="//@pouex/@features.0"
+          operator="SUBTRACTION"
+          value="0.05"/>
+      <influences
+          feature="//@pouex/@features.5"
+          value="0.1"/>
+    </actions>
+    <actions
+        xsi:type="pouexmm:RepeatedAction"
+        name="Yawn"
+        eachMillisec="60000.0">
+      <influences
+          feature="//@pouex/@features.4"
+          value="0.1"/>
+    </actions>
     <states
         name="Hungry">
       <activationConditions
@@ -82,69 +109,39 @@
           name="when is tired"
           threshold="8.0"/>
     </states>
-    <actions
-    xsi:type="pouexmm:PouexAction"
-        name="Clean">
-      <influences
-          feature="//@pouex/@features.2"
-          operator="SUBTRACTION"
-          value="1.0"/>
-    </actions>
-    <actions
-    xsi:type="pouexmm:PouexAction"
-        name="Eat">
-      <influences
-          feature="//@pouex/@features.0"
-          value="0.1"/>
-    </actions>
-    <actions
-    xsi:type="pouexmm:PouexAction"
-        name="Play">
-      <influences
-          feature="//@pouex/@features.4"
-          value="0.2"/>
-      <influences
-          feature="//@pouex/@features.1"
-          value="0.2"/>
-      <influences
-          feature="//@pouex/@features.3"
-          value="0.1"/>
-      <influences
-          feature="//@pouex/@features.0"
-          value="0.05"/>
-    </actions>
-    <actions
-        xsi:type="pouexmm:TimeEvent"
-        name="Time passes"
-        eachMillisec="1000.0">
-      <influences
-          feature="//@pouex/@features.2"
-          value="0.1"/>
-      <influences
-          feature="//@pouex/@features.1"
-          operator="SUBTRACTION"
-          value="0.1"/>
-      <influences
-          feature="//@pouex/@features.0"
-          operator="SUBTRACTION"
-          value="0.05"/>
-      <influences
-          feature="//@pouex/@features.5"
-          value="0.1"/>
-    </actions>
-    <actions
-        xsi:type="pouexmm:RepeatedAction"
-        name="Yawn"
-        eachMillisec="60000.0">
-      <influences
-          feature="//@pouex/@features.4"
-          value="0.1"/>
-    </actions>
-    
+    <features
+        xsi:type="pouexmm:Physic"
+        default="5.0"
+        minimum="1.0"
+        maximum="100.0"
+        name="weight"/>
+    <features
+        xsi:type="pouexmm:Emotional"
+        default="5.0"
+        maximum="10.0"
+        name="happiness"/>
+    <features
+        xsi:type="pouexmm:Physic"
+        default="3.0"
+        maximum="10.0"
+        name="Dirty"/>
+    <features
+        xsi:type="pouexmm:Emotional"
+        default="5.0"
+        maximum="10.0"
+        name="Hungry"/>
+    <features
+        xsi:type="pouexmm:Physic"
+        default="3.0"
+        maximum="10.0"
+        name="Tiredness"/>
+    <features
+        xsi:type="pouexmm:Physic"
+        maximum="100.0"
+        name="Age"/>
     <bodyparts
         name="Eye SX"/>
     <bodyparts
         name="Eye DX"/>
-    
   </pouex>
 </pouexmm:Game>

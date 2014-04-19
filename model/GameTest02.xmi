@@ -3,7 +3,8 @@
     xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:pouexmm="http://pouexmm/1.0">
+    xmlns:pouexmm="http://pouexmm/1.0"
+    name="index">
   <pouex name="Paperino">
     <actions
         xsi:type="pouexmm:PouexAction"
