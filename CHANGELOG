@@ -1,5 +1,14 @@
 CHANGELOG
 
+v0.9
+ - ThreasholdActivationCondition: features => feature
+ - Action: currentStatus rename in "enable" and set as boolean, mandatory.
+ - Influence: operator and value mandatory.
+ - Update OCL
+ - Add OCL thresholdShouldIsConsistentValueRespectOfFeatureMinMaxValue: ThresholdActivationCondition.threshold value should be a consistent value respect of Feature minimum and maximum values.
+ - RepeatedEvent: eachMills > from double to int
+ - Removed test on subtype of action.
+
 v0.8.1
  - Add license and readme.
  

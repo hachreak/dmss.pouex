@@ -3,19 +3,21 @@
     xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:pouexmm="http://pouexmm/1.0">
+    xmlns:pouexmm="http://pouexmm/1.0"
+    name="game03">
   <pouex name="MyPou">
     <actions
         xsi:type="pouexmm:PouexAction"
-        name="change sleep">
+        name="change sleep"
+        enable="true">
       <influences
-          feature="//@pouex/@features.0"/>
+          feature="//@pouex/@features.0"
+          value="3.0"/>
     </actions>
     <states
         name="TestStato">
       <activationConditions
           xsi:type="pouexmm:StateActivationCondition"
-          features="//@pouex/@features.0"
           name="TestStato2"
           state="//@pouex/@states.0"/>
     </states>
@@ -23,15 +25,16 @@
         name="TestStato3">
       <activationConditions
           xsi:type="pouexmm:MinThresholdActivationCondition"
-          features="//@pouex/@features.0"
           name="fuu"
-          threshold="2.0"/>
+          threshold="2.0"
+          feature="//@pouex/@features.0"/>
     </states>
     <features
         xsi:type="pouexmm:Emotional"
         default="5.0"
         maximum="10.0"
-        name="sleep"/>
+        name="sleep"
+        MeasurementUnit=""/>
     <bodyparts
         name="Face"
         image="face.jpg">

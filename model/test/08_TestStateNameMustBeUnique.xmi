@@ -28,12 +28,6 @@
         name="Happiness"/>
     <bodyparts
         name="Face">
-      <states
-          name="testname"/>
-      <states
-          name="newname"/>
-      <states
-          name="testname"/>
     </bodyparts>
   </pouex>
 </pouexmm:Game>

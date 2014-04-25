@@ -64,14 +64,16 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="influences" upperBound="-1"
         eType="#//Influence" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="currentStatus" eType="#//ActionStatus"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="enable" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TimeEvent" eSuperTypes="#//RepeatedAction"/>
   <eClassifiers xsi:type="ecore:EClass" name="Influence">
     <eStructuralFeatures xsi:type="ecore:EReference" name="feature" lowerBound="1"
         eType="#//Feature"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="#//MathematicOperator"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" lowerBound="1"
+        eType="#//MathematicOperator"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="InfluenceType">
     <eLiterals name="POSITIVE"/>
@@ -95,9 +97,15 @@
   <eClassifiers xsi:type="ecore:EClass" name="MaxThresholdActivationCondition" eSuperTypes="#//ThresholdActivationCondition"/>
   <eClassifiers xsi:type="ecore:EClass" name="ThresholdActivationCondition" abstract="true"
       eSuperTypes="#//ActivationCondition">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="thresholdShouldIsConsistentValueRespectOfFeatureMinMaxValue"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="thresholdShouldIsConsistentValueRespectOfFeatureMinMaxValue" value="&#xA;&#x9;&#x9;self.threshold &lt;= self.feature.maximum and self.threshold >= self.feature.minimum"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="threshold" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="features" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="feature" lowerBound="1"
         eType="#//Feature"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="MathematicOperator">
@@ -109,7 +117,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RepeatedAction" eSuperTypes="#//Action">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="eachMillisec" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble" defaultValueLiteral="1000"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="1000"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ActionStatus">
     <eLiterals name="ENABLED"/>
@@ -120,7 +128,7 @@
       <details key="constraints" value="atLeastOneActionForEachFeature ActionNameMustBeUnique FeatureNameMustBeUnique StateNameMustBeUnique"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="atLeastOneActionForEachFeature" value="self.features->forAll(f: Feature | self.actions->select(a: Action | a.currentStatus = ActionStatus::ENABLED).influences.feature->exists(inf_feature: Feature | inf_feature = f))"/>
+      <details key="atLeastOneActionForEachFeature" value="self.features->forAll(f: Feature | self.actions->select(a: Action | a.enable = true).influences.feature->exists(inf_feature: Feature | inf_feature = f))"/>
       <details key="ActionNameMustBeUnique" value="self.actions->isUnique(a: Action | a.name)"/>
       <details key="FeatureNameMustBeUnique" value="self.features->isUnique(f: Feature | f.name)"/>
       <details key="StateNameMustBeUnique" value="self.states->isUnique(s: State | s.name)"/>

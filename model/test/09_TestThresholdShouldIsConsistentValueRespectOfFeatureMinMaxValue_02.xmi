@@ -4,11 +4,12 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:pouexmm="http://pouexmm/1.0"
-    name="">
+    name="test">
   <pouex name="Pluto">
     <actions
         xsi:type="pouexmm:PouexAction"
-        name="test">
+        name="test"
+        enable="true">
       <influences
           feature="//@pouex/@features.0"
           value="1.0"/>
@@ -17,12 +18,21 @@
           operator="MULTIPLICATION"
           value="3.0"/>
     </actions>
+    <states
+        name="Happy">
+      <activationConditions
+          xsi:type="pouexmm:MinThresholdActivationCondition"
+          name="if sufficiently thin"
+          threshold="10000.0"
+          feature="//@pouex/@features.0"/>
+    </states>
     <features
         xsi:type="pouexmm:Physic"
-        default="1.0"
-        minimum="5.0"
-        maximum="10.0"
-        name="weight"/>
+        default="20.0"
+        minimum="10.0"
+        maximum="100.0"
+        name="weight"
+        MeasurementUnit="kg"/>
     <features
         xsi:type="pouexmm:Emotional"
         default="4.0"

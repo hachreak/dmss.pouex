@@ -4,18 +4,8 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:pouexmm="http://pouexmm/1.0"
-    xsi:schemaLocation="http://pouexmm/1.0 ../../metamodel/PouexMM.ecore">
+    name="test02">
   <pouex name="Pluto">
-    <features
-        xsi:type="pouexmm:Physic"
-        default="3.0"
-        maximum="10.0"
-        name="weight"/>
-    <features
-        xsi:type="pouexmm:Emotional"
-        default="4.0"
-        maximum="10.0"
-        name="Happiness"/>
     <actions
         xsi:type="pouexmm:PouexAction"
         name="test">
@@ -31,5 +21,15 @@
           operator="DIVISION"
           value="2.0"/>
     </actions>
+    <features
+        xsi:type="pouexmm:Physic"
+        default="3.0"
+        maximum="10.0"
+        name="weight"/>
+    <features
+        xsi:type="pouexmm:Emotional"
+        default="4.0"
+        maximum="10.0"
+        name="Happiness"/>
   </pouex>
 </pouexmm:Game>

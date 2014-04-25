@@ -8,7 +8,8 @@
   <pouex name="Paperino">
     <actions
         xsi:type="pouexmm:PouexAction"
-        name="new event">
+        name="new event"
+        enable="true">
       <influences
           feature="//@pouex/@features.0"
           operator="SUBTRACTION"

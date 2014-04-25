@@ -15,15 +15,13 @@
 
 * Changes to do:
   - for each PouexEvent should have the possibility to define features of the event (like how many players, ...)
-  - ActivationCondition: features => feature
-  - Remove Operator in Action and set only value as "-1.0" or "*0.1"
-  - Action Influence: currentStatus rename in "status" and set as boolean
-  - Action Influence: rename value in "operation"
+  + ThreasholdActivationCondition: features => feature
+  + Action: currentStatus rename in "status" and set as boolean
   - Rename in generation of action model: operation: i.value
   - Add OCL control in Influence value (operation)
   - Add OCL control in state name (can't have white space)
-  - Activation condition threshold value should be compatible with feature value (e.g. if Happiness [0,10], threshold should be [0,10]
-  - RepeatedEvent: eachMills > from double to int  
+  + Activation condition threshold value should be compatible with feature value (e.g. if Happiness [0,10], threshold should be [0,10])
+  + RepeatedEvent: eachMills > from double to int  
   
 * Changes done:
   - how is implemented the events. Need to distinguish "environment event" like TimeEvent to PouexEvent like "Play"

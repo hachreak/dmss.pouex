@@ -4,8 +4,21 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:pouexmm="http://pouexmm/1.0"
-    xsi:schemaLocation="http://pouexmm/1.0 ../../metamodel/PouexMM.ecore">
+    name="test04">
   <pouex name="Pluto">
+    <actions
+        xsi:type="pouexmm:PouexAction"
+        name="myaction"
+        enable="true">
+      <influences
+          feature="//@pouex/@features.1"
+          operator="MULTIPLICATION"
+          value="3.0"/>
+      <influences
+          feature="//@pouex/@features.0"
+          operator="DIVISION"
+          value="2.0"/>
+    </actions>
     <features
         xsi:type="pouexmm:Physic"
         default="3.0"
@@ -21,17 +34,5 @@
         default="4.0"
         maximum="10.0"
         name="Dirty"/>
-    <actions
-        xsi:type="pouexmm:PouexAction"
-        name="myaction">
-      <influences
-          feature="//@pouex/@features.1"
-          operator="MULTIPLICATION"
-          value="3.0"/>
-      <influences
-          feature="//@pouex/@features.0"
-          operator="DIVISION"
-          value="2.0"/>
-    </actions>
   </pouex>
 </pouexmm:Game>

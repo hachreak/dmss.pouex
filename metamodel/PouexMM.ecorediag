@@ -148,7 +148,7 @@
         <layoutConstraint xmi:type="notation:Location" xmi:id="_dptMwbd2EeOLS-bg69ySxw"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_9-rnYLqUEeOzwvctV6FS8g" type="2001">
-        <element xmi:type="ecore:EAttribute" href="PouexMM.ecore#//Action/currentStatus"/>
+        <element xmi:type="ecore:EAttribute" href="PouexMM.ecore#//Action/enable"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_9-rnYbqUEeOzwvctV6FS8g"/>
       </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_mKhS4bdYEeORb5BRaWIL_g"/>
@@ -325,7 +325,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_XL57QbqJEeOzwvctV6FS8g" fontColor="4210752" fontName="Cantarell" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="PouexMM.ecore#//ThresholdActivationCondition"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XL57QrqJEeOzwvctV6FS8g" x="720" y="468"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XL57QrqJEeOzwvctV6FS8g" x="732" y="492"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_4uNQcLqNEeOzwvctV6FS8g" type="1005">
     <children xmi:type="notation:Node" xmi:id="_4uOekLqNEeOzwvctV6FS8g" type="4010"/>
@@ -542,7 +542,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_ewTkEbdYEeORb5BRaWIL_g" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_ewTkErdYEeORb5BRaWIL_g" fontColor="4210752" fontName="Cantarell" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="PouexMM.ecore#//ThresholdActivationCondition/features"/>
+    <element xmi:type="ecore:EReference" href="PouexMM.ecore#//ThresholdActivationCondition/feature"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_ewTkE7dYEeORb5BRaWIL_g" points="[-9, -4, 150, 83]$[-157, -102, 2, -15]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ewWAULdYEeORb5BRaWIL_g" id="(0.07881773399014778,0.07272727272727272)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ewWnYLdYEeORb5BRaWIL_g" id="(0.7783783783783784,0.14285714285714285)"/>
