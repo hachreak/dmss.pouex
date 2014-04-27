@@ -58,7 +58,7 @@
     <actions
         xsi:type="pouexmm:RepeatedAction"
         name="Yawn"
-        eachMillisec="60000.0">
+        eachMillisec="60000">
       <influences
           feature="//@pouex/@features.4"
           value="0.1"/>
@@ -67,7 +67,7 @@
         name="Hungry">
       <activationConditions
           xsi:type="pouexmm:MinThresholdActivationCondition"
-          features="//@pouex/@features.3"
+          feature="//@pouex/@features.3"
           name="when is hungry"
           threshold="8.0"/>
     </states>
@@ -75,21 +75,21 @@
         name="Dead">
       <activationConditions
           xsi:type="pouexmm:MinThresholdActivationCondition"
-          features="//@pouex/@features.1"
+          feature="//@pouex/@features.1"
           name="if not happy"/>
       <activationConditions
           xsi:type="pouexmm:MaxThresholdActivationCondition"
-          features="//@pouex/@features.0"
+          feature="//@pouex/@features.0"
           name="if to much fat"
           threshold="100.0"/>
       <activationConditions
           xsi:type="pouexmm:MaxThresholdActivationCondition"
-          features="//@pouex/@features.2"
+          feature="//@pouex/@features.2"
           name="if to much dirty"
           threshold="9.0"/>
       <activationConditions
           xsi:type="pouexmm:MinThresholdActivationCondition"
-          features="//@pouex/@features.5"
+          feature="//@pouex/@features.5"
           name="if to much old"
           threshold="100.0"/>
     </states>
@@ -97,7 +97,7 @@
         name="Dirty">
       <activationConditions
           xsi:type="pouexmm:MaxThresholdActivationCondition"
-          features="//@pouex/@features.2"
+          feature="//@pouex/@features.2"
           name="if to much dirty"
           threshold="7.0"/>
     </states>
@@ -105,7 +105,7 @@
         name="Tired">
       <activationConditions
           xsi:type="pouexmm:MinThresholdActivationCondition"
-          features="//@pouex/@features.4"
+          feature="//@pouex/@features.4"
           name="when is tired"
           threshold="8.0"/>
     </states>

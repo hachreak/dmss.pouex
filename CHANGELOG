@@ -1,5 +1,16 @@
 CHANGELOG
 
+v0.11
+ - Removed unused ActionStatus Enum.
+ - Add Pouex's birthday.
+ - Update consistency in models.
+
+v0.10
+ - StateActivationCondition: mandatory identify the state.
+ - Add LogicActivationCondition (as abstract) to create complex activation condition (unified by logic operator). E.g. if(dirty > 6 AND tired > 7) then activate state "Dirt"
+ - Add AndLogicActivationCondition and OrLogicActivationCondition
+ - Add OCL checkCicleActivationLevelOne, checkCicleActivationLevelTwo and checkCicleActivationFromLevelThree to avoid cicle activation.
+
 v0.9
  - ThreasholdActivationCondition: features => feature
  - Action: currentStatus rename in "enable" and set as boolean, mandatory.

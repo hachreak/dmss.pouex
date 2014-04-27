@@ -28,6 +28,69 @@
           name="fuu"
           threshold="2.0"
           feature="//@pouex/@features.0"/>
+      <activationConditions
+          xsi:type="pouexmm:AndLogicActivationCondition"
+          name="gnu">
+        <terms
+            xsi:type="pouexmm:MinThresholdActivationCondition"
+            name="if don't want sleep"
+            threshold="7.0"
+            feature="//@pouex/@features.0"/>
+        <terms
+            xsi:type="pouexmm:StateActivationCondition"
+            name="secondo livello"
+            state="//@pouex/@states.1"
+            condition="true"/>
+        <terms
+            xsi:type="pouexmm:AndLogicActivationCondition"
+            name="fuuu">
+          <terms
+              xsi:type="pouexmm:MaxThresholdActivationCondition"
+              name="max sleep"
+              threshold="4.0"
+              feature="//@pouex/@features.0"/>
+          <terms
+              xsi:type="pouexmm:OrLogicActivationCondition"
+              name="orzu">
+            <terms
+                xsi:type="pouexmm:StateActivationCondition"
+                name="fuustateactivation"
+                state="//@pouex/@states.0"/>
+            <terms
+                xsi:type="pouexmm:StateActivationCondition"
+                name="sdf"
+                state="//@pouex/@states.0"/>
+            <terms
+                xsi:type="pouexmm:AndLogicActivationCondition"
+                name="ultimo livello">
+              <terms
+                  xsi:type="pouexmm:StateActivationCondition"
+                  name="stato ultimo livello"
+                  state="//@pouex/@states.1"/>
+            </terms>
+          </terms>
+          <terms
+              xsi:type="pouexmm:StateActivationCondition"
+              name="terzo livello"
+              state="//@pouex/@states.1"/>
+        </terms>
+      </activationConditions>
+      <activationConditions
+          xsi:type="pouexmm:StateActivationCondition"
+          name="primo livello"
+          state="//@pouex/@states.1"/>
+      <activationConditions
+          xsi:type="pouexmm:AndLogicActivationCondition"
+          name="fuu 2 livello">
+        <terms
+            xsi:type="pouexmm:AndLogicActivationCondition"
+            name="fuu 3 livello">
+          <terms
+              xsi:type="pouexmm:StateActivationCondition"
+              name="fuu terzo livello"
+              state="//@pouex/@states.1"/>
+        </terms>
+      </activationConditions>
     </states>
     <features
         xsi:type="pouexmm:Emotional"

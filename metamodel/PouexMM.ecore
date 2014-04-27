@@ -24,6 +24,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="bodyparts" lowerBound="1"
         upperBound="-1" eType="#//BodyPart" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="birthday" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Feature" abstract="true">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
@@ -45,6 +47,14 @@
   <eClassifiers xsi:type="ecore:EClass" name="Physic" eSuperTypes="#//Feature"/>
   <eClassifiers xsi:type="ecore:EClass" name="Emotional" eSuperTypes="#//Feature"/>
   <eClassifiers xsi:type="ecore:EClass" name="State">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="checkCicleActivationLevelOne checkCicleActivationLevelTwo checkCicleActivationFromLevelThree"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="checkCicleActivationLevelOne" value="self.activationConditions->selectByType(StateActivationCondition)->forAll(s: StateActivationCondition | self &lt;> s.state)"/>
+      <details key="checkCicleActivationLevelTwo" value="self.activationConditions->selectByKind(LogicActivationCondition).terms->selectByType(StateActivationCondition)->forAll(s: StateActivationCondition | self &lt;> s.state)"/>
+      <details key="checkCicleActivationFromLevelThree" value="self.activationConditions->selectByKind(LogicActivationCondition).oclAsSet()->closure(l: LogicActivationCondition | l.terms->selectByKind(LogicActivationCondition)).terms->selectByType(StateActivationCondition)->forAll(s: StateActivationCondition | self &lt;> s.state)"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="activationConditions" lowerBound="1"
         upperBound="-1" eType="#//ActivationCondition" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -119,10 +129,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="eachMillisec" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="1000"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="ActionStatus">
-    <eLiterals name="ENABLED"/>
-    <eLiterals name="DISABLED" value="1"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LiveObject">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="atLeastOneActionForEachFeature ActionNameMustBeUnique FeatureNameMustBeUnique StateNameMustBeUnique"/>
@@ -141,7 +147,7 @@
         eType="#//Feature" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StateActivationCondition" eSuperTypes="#//ActivationCondition">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="state" eType="#//State"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="state" lowerBound="1" eType="#//State"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="condition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BodyAlteration">
@@ -150,4 +156,11 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="image" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StateDead" eSuperTypes="#//State"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LogicActivationCondition" abstract="true"
+      eSuperTypes="#//ActivationCondition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="terms" lowerBound="1" upperBound="-1"
+        eType="#//ActivationCondition" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AndLogicActivationCondition" eSuperTypes="#//LogicActivationCondition"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OrLogicActivationCondition" eSuperTypes="#//LogicActivationCondition"/>
 </ecore:EPackage>
