@@ -1,5 +1,8 @@
 CHANGELOG
 
+v0.12
+ - Pouex's birthday not mandatory.
+
 v0.11
  - Removed unused ActionStatus Enum.
  - Add Pouex's birthday.

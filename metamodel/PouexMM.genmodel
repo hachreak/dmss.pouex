@@ -18,8 +18,8 @@
       <genEnumLiterals ecoreEnumLiteral="PouexMM.ecore#//MathematicOperator/MODULE"/>
     </genEnums>
     <genClasses ecoreClass="PouexMM.ecore#//Game">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PouexMM.ecore#//Game/pouex"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PouexMM.ecore#//Game/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PouexMM.ecore#//Game/users"/>
     </genClasses>
     <genClasses ecoreClass="PouexMM.ecore#//Pouex">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PouexMM.ecore#//Pouex/name"/>
@@ -94,9 +94,5 @@
     </genClasses>
     <genClasses ecoreClass="PouexMM.ecore#//AndLogicActivationCondition"/>
     <genClasses ecoreClass="PouexMM.ecore#//OrLogicActivationCondition"/>
-    <genClasses ecoreClass="PouexMM.ecore#//User">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PouexMM.ecore#//User/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PouexMM.ecore#//User/pouex"/>
-    </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -22,6 +22,7 @@
   - Add OCL control in state name (can't have white space)
   + Activation condition threshold value should be compatible with feature value (e.g. if Happiness [0,10], threshold should be [0,10])
   + RepeatedEvent: eachMills > from double to int  
+  - Transform in Acceleo name > name without spaces.
   
 * Changes done:
   - how is implemented the events. Need to distinguish "environment event" like TimeEvent to PouexEvent like "Play"
