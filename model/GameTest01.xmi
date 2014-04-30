@@ -8,7 +8,8 @@
   <pouex name="Pippo">
     <actions
         xsi:type="pouexmm:PouexAction"
-        name="Clean">
+        name="Clean"
+        enable="true">
       <influences
           feature="//@pouex/@features.2"
           operator="SUBTRACTION"
@@ -16,14 +17,16 @@
     </actions>
     <actions
         xsi:type="pouexmm:PouexAction"
-        name="Eat">
+        name="Eat"
+        enable="true">
       <influences
           feature="//@pouex/@features.0"
           value="0.1"/>
     </actions>
     <actions
         xsi:type="pouexmm:PouexAction"
-        name="Play">
+        name="Play"
+        enable="true">
       <influences
           feature="//@pouex/@features.4"
           value="0.2"/>
@@ -39,7 +42,8 @@
     </actions>
     <actions
         xsi:type="pouexmm:TimeEvent"
-        name="Time passes">
+        name="Time passes"
+        enable="true">
       <influences
           feature="//@pouex/@features.2"
           value="0.1"/>
@@ -58,6 +62,7 @@
     <actions
         xsi:type="pouexmm:RepeatedAction"
         name="Yawn"
+        enable="true"
         eachMillisec="60000">
       <influences
           feature="//@pouex/@features.4"
@@ -67,47 +72,47 @@
         name="Hungry">
       <activationConditions
           xsi:type="pouexmm:MinThresholdActivationCondition"
-          feature="//@pouex/@features.3"
           name="when is hungry"
-          threshold="8.0"/>
+          threshold="8.0"
+          feature="//@pouex/@features.3"/>
     </states>
     <states
         name="Dead">
       <activationConditions
           xsi:type="pouexmm:MinThresholdActivationCondition"
-          feature="//@pouex/@features.1"
-          name="if not happy"/>
+          name="if not happy"
+          feature="//@pouex/@features.1"/>
       <activationConditions
           xsi:type="pouexmm:MaxThresholdActivationCondition"
-          feature="//@pouex/@features.0"
           name="if to much fat"
-          threshold="100.0"/>
+          threshold="100.0"
+          feature="//@pouex/@features.0"/>
       <activationConditions
           xsi:type="pouexmm:MaxThresholdActivationCondition"
-          feature="//@pouex/@features.2"
           name="if to much dirty"
-          threshold="9.0"/>
+          threshold="9.0"
+          feature="//@pouex/@features.2"/>
       <activationConditions
           xsi:type="pouexmm:MinThresholdActivationCondition"
-          feature="//@pouex/@features.5"
           name="if to much old"
-          threshold="100.0"/>
+          threshold="100.0"
+          feature="//@pouex/@features.5"/>
     </states>
     <states
         name="Dirty">
       <activationConditions
           xsi:type="pouexmm:MaxThresholdActivationCondition"
-          feature="//@pouex/@features.2"
           name="if to much dirty"
-          threshold="7.0"/>
+          threshold="7.0"
+          feature="//@pouex/@features.2"/>
     </states>
     <states
         name="Tired">
       <activationConditions
           xsi:type="pouexmm:MinThresholdActivationCondition"
-          feature="//@pouex/@features.4"
           name="when is tired"
-          threshold="8.0"/>
+          threshold="8.0"
+          feature="//@pouex/@features.4"/>
     </states>
     <features
         xsi:type="pouexmm:Physic"

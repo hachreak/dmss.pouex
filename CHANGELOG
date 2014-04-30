@@ -1,5 +1,11 @@
 CHANGELOG
 
+v0.13
+ - Set birthday as string.
+ - Move reference bodyPart from Pouex to LiveObject. Now they are independents.
+ - Add test for OCL rule CheckCicleActivationLevelOne, CheckCicleActivationLevelTwo and CheckCicleActivationLevelThree.
+ - Update tests.
+
 v0.12.1
  - Modify .ecorediag to be exported as image and included in a pdf.
 
@@ -15,7 +21,7 @@ v0.10
  - StateActivationCondition: mandatory identify the state.
  - Add LogicActivationCondition (as abstract) to create complex activation condition (unified by logic operator). E.g. if(dirty > 6 AND tired > 7) then activate state "Dirt"
  - Add AndLogicActivationCondition and OrLogicActivationCondition
- - Add OCL checkCicleActivationLevelOne, checkCicleActivationLevelTwo and checkCicleActivationFromLevelThree to avoid cicle activation.
+ - Add OCL checkCicleActivationLevelOne, checkCicleActivationLevelTwo and checkCicleActivationFromLevelThree to avoid cycle activation.
 
 v0.9
  - ThreasholdActivationCondition: features => feature
