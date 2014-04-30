@@ -1,5 +1,8 @@
 CHANGELOG
 
+v0.12.1
+ - Modify .ecorediag to be exported as image and included in a pdf.
+
 v0.12
  - Pouex's birthday not mandatory.
 
