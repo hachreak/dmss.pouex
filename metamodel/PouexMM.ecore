@@ -76,6 +76,12 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TimeEvent" eSuperTypes="#//RepeatedAction"/>
   <eClassifiers xsi:type="ecore:EClass" name="Influence">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="notDivByZero"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="notDivByZero" value="if self.operator = MathematicOperator::DIVISION then value &lt;> 0 else true endif"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="feature" lowerBound="1"
         eType="#//Feature"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" lowerBound="1"
@@ -128,13 +134,14 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LiveObject">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="atLeastOneActionForEachFeature ActionNameMustBeUnique FeatureNameMustBeUnique StateNameMustBeUnique"/>
+      <details key="constraints" value="atLeastOneActionForEachFeature ActionNameMustBeUnique FeatureNameMustBeUnique StateNameMustBeUnique almostExistOneStateDead"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
       <details key="atLeastOneActionForEachFeature" value="self.features->forAll(f: Feature | self.actions->select(a: Action | a.enable = true).influences.feature->exists(inf_feature: Feature | inf_feature = f))"/>
       <details key="ActionNameMustBeUnique" value="self.actions->isUnique(a: Action | a.name)"/>
       <details key="FeatureNameMustBeUnique" value="self.features->isUnique(f: Feature | f.name)"/>
       <details key="StateNameMustBeUnique" value="self.states->isUnique(s: State | s.name)"/>
+      <details key="almostExistOneStateDead" value="self.states->selectByType(StateDead)->size() > 0"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="actions" upperBound="-1"
         eType="#//Action" containment="true"/>

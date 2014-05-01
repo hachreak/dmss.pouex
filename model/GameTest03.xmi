@@ -100,6 +100,14 @@
           threshold="4.0"
           feature="//@pouex/@features.0"/>
     </states>
+    <states
+        xsi:type="pouexmm:StateDead"
+        name="fine">
+      <activationConditions
+          xsi:type="pouexmm:MinThresholdActivationCondition"
+          name="test end"
+          feature="//@pouex/@features.0"/>
+    </states>
     <features
         xsi:type="pouexmm:Emotional"
         default="5.0"

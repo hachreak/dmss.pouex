@@ -12,18 +12,8 @@
         enable="true">
       <influences
           feature="//@pouex/@features.0"
-          operator="SUBTRACTION"
-          value="4.0"/>
+          operator="DIVISION"/>
     </actions>
-    <states
-        xsi:type="pouexmm:StateDead"
-        name="end">
-      <activationConditions
-          xsi:type="pouexmm:MaxThresholdActivationCondition"
-          name="test end"
-          threshold="90.0"
-          feature="//@pouex/@features.0"/>
-    </states>
     <features
         xsi:type="pouexmm:Physic"
         default="20.0"

@@ -1,5 +1,12 @@
 CHANGELOG
 
+v0.14
+ - Add OCL notDivByZero: test if in a Influence, if mathematical operator is division, value should not be zero.
+ - Add Test 11_TestNotDivByZero.xmi: test of notDivByZero OCL rule.
+ - Add OCL almostExistOneStateDead(): test if exist almost one state to modelize the end of the game.
+ - Add Test 12_TestAlmostExistOneStateDead.xmi: test almostExistOneStateDead OCL rule.
+ - Update tests.
+  
 v0.13
  - Set birthday as string.
  - Move reference bodyPart from Pouex to LiveObject. Now they are independents.
