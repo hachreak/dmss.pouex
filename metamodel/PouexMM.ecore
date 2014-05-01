@@ -93,6 +93,12 @@
     <eLiterals name="NEGATIVE" value="1"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BodyPart">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="uniqueNameInSameLevel"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="uniqueNameInSameLevel" value="self.parent.oclIsUndefined() or self.parent.subparts->select(b: BodyPart | self.name = b.name)->size() = 1"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="subparts" upperBound="-1"
         eType="#//BodyPart" containment="true" eOpposite="#//BodyPart/parent"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

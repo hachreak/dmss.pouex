@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="ASCII"?>
+<pouexmm:Game
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:pouexmm="http://pouexmm/1.0"
+    name="game03">
+  <pouex name="MyPou">
+    <actions
+        xsi:type="pouexmm:PouexAction"
+        name="change sleep"
+        enable="true">
+      <influences
+          feature="//@pouex/@features.0"
+          value="3.0"/>
+    </actions>
+    <states
+        name="TestStato">
+      <activationConditions
+          xsi:type="pouexmm:StateActivationCondition"
+          name="TestStato2"
+          state="//@pouex/@states.1"/>
+    </states>
+    <states
+        name="TestStato3">
+      <activationConditions
+          xsi:type="pouexmm:MinThresholdActivationCondition"
+          name="fuu"
+          threshold="2.0"
+          feature="//@pouex/@features.0"/>
+      <activationConditions
+          xsi:type="pouexmm:AndLogicActivationCondition"
+          name="gnu">
+        <terms
+            xsi:type="pouexmm:MinThresholdActivationCondition"
+            name="if don't want sleep"
+            threshold="7.0"
+            feature="//@pouex/@features.0"/>
+        <terms
+            xsi:type="pouexmm:StateActivationCondition"
+            name="secondo livello"
+            state="//@pouex/@states.2"
+            condition="true"/>
+        <terms
+            xsi:type="pouexmm:AndLogicActivationCondition"
+            name="fuuu">
+          <terms
+              xsi:type="pouexmm:MaxThresholdActivationCondition"
+              name="max sleep"
+              threshold="4.0"
+              feature="//@pouex/@features.0"/>
+          <terms
+              xsi:type="pouexmm:OrLogicActivationCondition"
+              name="orzu">
+            <terms
+                xsi:type="pouexmm:StateActivationCondition"
+                name="fuustateactivation"
+                state="//@pouex/@states.0"/>
+            <terms
+                xsi:type="pouexmm:StateActivationCondition"
+                name="sdf"
+                state="//@pouex/@states.0"/>
+            <terms
+                xsi:type="pouexmm:AndLogicActivationCondition"
+                name="last level">
+              <terms
+                  xsi:type="pouexmm:StateActivationCondition"
+                  name="state last level"
+                  state="//@pouex/@states.2"/>
+            </terms>
+          </terms>
+          <terms
+              xsi:type="pouexmm:StateActivationCondition"
+              name="level three"
+              state="//@pouex/@states.2"/>
+        </terms>
+      </activationConditions>
+      <activationConditions
+          xsi:type="pouexmm:StateActivationCondition"
+          name="primo livello"
+          state="//@pouex/@states.0"/>
+      <activationConditions
+          xsi:type="pouexmm:AndLogicActivationCondition"
+          name="fuu 2 livello">
+        <terms
+            xsi:type="pouexmm:AndLogicActivationCondition"
+            name="fuu 3 livello">
+          <terms
+              xsi:type="pouexmm:StateActivationCondition"
+              name="fuu terzo livello"
+              state="//@pouex/@states.0"/>
+        </terms>
+      </activationConditions>
+    </states>
+    <states
+        name="Test State 4">
+      <activationConditions
+          xsi:type="pouexmm:MinThresholdActivationCondition"
+          name="test activation"
+          threshold="4.0"
+          feature="//@pouex/@features.0"/>
+    </states>
+    <features
+        xsi:type="pouexmm:Emotional"
+        default="5.0"
+        maximum="10.0"
+        name="sleep"
+        MeasurementUnit=""/>
+    <bodyparts
+        name="Face"
+        image="face.jpg">
+      <subparts
+          name="eye sx"
+          image="eye.jpg"/>
+      <subparts
+          name="eye dx"
+          image="eye.jpg"/>
+    </bodyparts>
+  </pouex>
+</pouexmm:Game>

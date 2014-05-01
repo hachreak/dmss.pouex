@@ -1,5 +1,9 @@
 CHANGELOG
 
+v0.15
+ - Add OCL uniqueNameInSameLevel: test if the name of a BodyPart is unique in his level.
+ - Add Test uniqueNameInSameLevel: test uniqueNameInSameLevel OCL rule.
+  
 v0.14
  - Add OCL notDivByZero: test if in a Influence, if mathematical operator is division, value should not be zero.
  - Add Test 11_TestNotDivByZero.xmi: test of notDivByZero OCL rule.
