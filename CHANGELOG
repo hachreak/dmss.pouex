@@ -1,5 +1,9 @@
 CHANGELOG
 
+v.0.15.1
+ - BodyPart: image mandatory.
+ - Add documentation.
+ 
 v0.15
  - Add OCL uniqueNameInSameLevel: test if the name of a BodyPart is unique in his level.
  - Add Test uniqueNameInSameLevel: test uniqueNameInSameLevel OCL rule.
